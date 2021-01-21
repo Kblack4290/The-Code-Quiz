@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+
+
+    <!-- Highscore linked to highscore html -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-md">
+            <a class="navbar-brand" href="#">
+                <h4>View Highscores</h4>
+            </a>
+            <!-- This is where the time should go. Add a new div? or span? -->
+            <h4>Timer: </h4>
+        </div>
+    </nav>
+<!-- This is the start quiz page  -->
+    <section class="container" id="start-quiz">
+        <div>
+            <h2>The Coding Quiz</h2>
+            <p> This is the coding quiz. You will be prompted with a series of questions to test your coding knowledge.
+                A timer will be set at 75 seconds. If you answer a question wrong then you will be deducted 10 seconds.
+                Your highscore will be based off of how many seconds are left on the clock. Do you have what it takes!
+            </p>
+            <button type="button" class="btn btn-primary">Start Quiz!</button>
+        </div>
+    </section>
+
+<!-- This is the question pages  -->
+    <section class=" container hidden" id="quiz-question">
+        <div class="row"> 
+            <div class="col-md-12 question">
+                <h2 id="title">This is where the quiz question will go</h2>
+            </div>
+        </div>
+        <div class="col-md-6" id="choice">This where quiz buttons go
+        </div>
+        <div class="col-md-3" id="result"> wrong or correct</div>
+    </section>
+
+    <section class="container hidden">
+        <div class="row">
+        <div class="col-md-12 final-score"> <h3>All Done!</h3></div>
+        <div class="col-md-12"><h3>View your highscore</h3></div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Enter initials here!</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
