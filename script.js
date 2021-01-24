@@ -59,7 +59,6 @@ function nextQuestion() {
 
 
         choiceBtn.addEventListener("click", () => {
-            nextQuestion();
             correctChoice();
 
         });
@@ -68,25 +67,34 @@ function nextQuestion() {
         document.getElementById("choice").append(choiceBtn);
 
     }
-    questionCounter++;
+
 
     console.log(questions);
 }
 
-function correctChoice () {
+function correctChoice() {
+    console.log(event.target)
     document.getElementById("result").innerHTML = "";
     var correct = questions[questionCounter].answer;
-    var userChoice = questions[questionCounter].choices[""];
+    var userChoice = event.target.textContent;
 
-    if (correct === userChoice){
-        console.log(true);
-        
-    } 
+    console.log(questionCounter, correct, userChoice)
+    if (userChoice === correct) {
+        results.textContent = "Correct";
+
+        console.log("true");
+
+    }
+    else {
+        results.textContent = "Wrong";
+        secondsLeft -= 15;
+        console.log("false");
+
+    }
+    questionCounter++;
+    nextQuestion();
 
 }
-
-
-
 
 
 // the start button will start the time and go to question 1
@@ -102,13 +110,13 @@ startBtn.addEventListener("click", () => {
 function startTime() {
     console.log("startTime");
     var timerInterval = setInterval(function () {
-        
+
         timeEl.textContent = secondsLeft;
         secondsLeft--;
-    
+
         if (secondsLeft === 0 || questionCounter === 5) {
             clearInterval(timerInterval); // this is where timer needs to reach 0
-            
+
 
         }
     }, 1000);
