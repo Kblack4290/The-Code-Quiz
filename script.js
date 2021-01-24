@@ -2,11 +2,10 @@
 // once I start the quiz the timer will start to countdown for 75 sec
 var timeEl = document.querySelector("#time-left");
 var startBtn = document.getElementById("button");
-// var timer= setInterval(()=> {startTime})
 var secondsLeft = 75;
 var quizTile = document.querySelector("#title");
 var questionCounter = 0;
-var results;
+var results = document.querySelector("#result");
 
 
 //question and choices variable
@@ -42,12 +41,13 @@ var questions = [{
 
 ]
 
+
+
+
 // When I click a choice then it will go to the next question
 function nextQuestion() {
     document.getElementById("choice").innerHTML = "";
     document.getElementById("title").innerHTML = questions[questionCounter].questions;
-
-    // document.getElementById("choice").innerHTML = questions[questionCounter].choices;
 
     // create for loop to cycle through each choice to create new button element
     for (var i = 0; i < questions[questionCounter].choices.length; i++) {
@@ -55,42 +55,36 @@ function nextQuestion() {
         choiceBtn.textContent = questions[questionCounter].choices[i];
 
 
+
+
+
         choiceBtn.addEventListener("click", () => {
             nextQuestion();
+            correctChoice();
 
         });
+
         // the id is choice  is attached to the choicebtn. when the choice btn is selected then it will loop through the questions
         document.getElementById("choice").append(choiceBtn);
+
     }
     questionCounter++;
 
     console.log(questions);
 }
 
+function correctChoice () {
+    document.getElementById("result").innerHTML = "";
+    var correct = questions[questionCounter].answer;
+    var userChoice = questions[questionCounter].choices[""];
 
-function correctChoice() {
-
-
-
-    for (var i = 0; i < questions[questionCounter].answer.length; i++) {
-
-        // var results = document.getElementById("result").innerHTML = ""
-        // results.textContent = question[questionCounter].answer[i]
-
-        if (results === questions[questionCounter].answer[i] ) {
-
-            document.getElementById("result").innerHTML = "Correct !"
-            correctChoice();
-
-        }
-        console.log(results);
-
-            
+    if (correct === userChoice){
+        console.log(true);
         
-
-    }
+    } 
 
 }
+
 
 
 
@@ -102,30 +96,19 @@ startBtn.addEventListener("click", () => {
 
 });
 
-// // for loop
-// for (var i = 0; i < questions.length; i++) {
-//     var q = questions[i].questions
-//     var a = questions[i].answer
-//     console.log(q);
-//     console.log(a);
-// };
-
-
-
-
 
 
 // timer function starts the time count down by 1 
 function startTime() {
     console.log("startTime");
     var timerInterval = setInterval(function () {
-        console.log("setInterval");
+        
         timeEl.textContent = secondsLeft;
         secondsLeft--;
-        console.log(secondsLeft);
-        if (secondsLeft === 0) {
+    
+        if (secondsLeft === 0 || questionCounter === 5) {
             clearInterval(timerInterval); // this is where timer needs to reach 0
-            console.log(timerInterval);
+            
 
         }
     }, 1000);
@@ -142,9 +125,3 @@ function startTime() {
 
 //goes to the next question in the loop
 
-
-
-// Here are the questions
-
-//  var choiceNode = document.createElement("button");
-// choiceNode.onclick = questionClick;
