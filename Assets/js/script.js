@@ -50,6 +50,7 @@ function nextQuestion() {
 
     // create for loop to cycle through each choice to create new button element
     for (var i = 0; i < questions[questionCounter].choices.length; i++) {
+        var choiceLi = document.createElement("br")
         var choiceBtn = document.createElement("BUTTON")
         choiceBtn.textContent = questions[questionCounter].choices[i];
 
@@ -59,7 +60,7 @@ function nextQuestion() {
         });
 
         // the id is choice  is attached to the choicebtn. when the choice btn is selected then it will loop through the questions
-        document.getElementById("choice").append(choiceBtn);
+        document.getElementById("choice").append(choiceLi, choiceBtn);
 
     }
     console.log(questions);
@@ -112,12 +113,16 @@ startBtn.addEventListener("click", () => {
 function hideStartQuiz() {
 
     var hideStart = document.getElementById("start-quiz");
+    
 
-    if (hideStart.style.display === "none") {
+    if (hideStart.style.display === "none" ) {
         hideStart.style.display = "block";
+        
     }
     else {
         hideStart.style.display = "none";
+        
+        
     }
 }
 

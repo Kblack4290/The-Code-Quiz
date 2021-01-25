@@ -1,0 +1,51 @@
+ body,
+ html {
+     background-image: url(../florian-olivo-4hbJ-eymZ1o-unsplash.jpg);
+     background-repeat: no-repeat;
+     background-size: cover;
+
+ }
+
+ nav {
+     padding: 20px;
+     margin-bottom: 15%;
+ }
+
+ .container {
+     padding: 20px;
+ }
+
+ .intro {
+
+     text-align: center;
+ }
+
+ .choice {
+     margin-left: px;
+ }
+
+ h2 {
+     width: 100%;
+     padding: 10px;
+ }
+
+ p {
+
+     font-size: 20px;
+ }
+
+ .scores {
+     margin-top: 20%;
+     padding: 50px;
+     text-align: center;
+
+ }
+
+ h1 {
+     position: relative;
+     padding: 20px;
+     top: 100%;
+ }
+ button {
+ margin-bottom: 5px;
+ }
