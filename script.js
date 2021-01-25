@@ -41,8 +41,6 @@ var questions = [{
 
 ]
 
-
-
 // When I click a choice then it will go to the next question
 function nextQuestion() {
     document.getElementById("choice").innerHTML = "";
@@ -64,11 +62,10 @@ function nextQuestion() {
         document.getElementById("choice").append(choiceBtn);
 
     }
-
-
     console.log(questions);
 }
 
+// The user will see if their previous answer is wrong or correct
 function correctChoice() {
     console.log(event.target)
     document.getElementById("result").innerHTML = "";
@@ -82,14 +79,12 @@ function correctChoice() {
         console.log("true");
 
     }
+
+    //  if user selects the wrong answer then -15 secs from timer
     else {
         results.textContent = "Wrong";
         secondsLeft -= 15;
         console.log("false");
-
-        if (questionCounter > 5) {
-
-        }
 
     }
 
@@ -99,14 +94,10 @@ function correctChoice() {
         nextQuestion();
     }
     else {
-        document.getElementById("high-score").textContent = "View your score " + secondsLeft;
+        document.getElementById("high-score").textContent = "View your score: " + secondsLeft;
         document.getElementById("all-done").style.display = "block";
     }
 }
-
-
-
-
 
 // the start button will start the time and go to question 1
 startBtn.addEventListener("click", () => {
@@ -141,27 +132,19 @@ function startTime() {
         timeEl.textContent = secondsLeft;
         secondsLeft--;
 
-
+        // when time reaches 0 or all 5 questions are answered then the quiz questions are hidden and all done page is shown
         if (secondsLeft === 0 || questionCounter === 5) {
             clearInterval(timerInterval);
-            // when time reaches 0 or all 5 questions are answered then the quiz questions are hidden and all done page is shown
             document.getElementById("quiz-question").style.display = "none";
             document.getElementById("all-done").style.display = "block";
-            // this is where timer needs to reach 0
         }
-
-
     }, 1000);
 }
 
+// high score html 
+function leaderBoard() {
 
+    var score = secondsLeft
+}
 
-
-
-
-
-
-//when you select a choice you will prompted with correct or wrong
-
-//goes to the next question in the loop
 
