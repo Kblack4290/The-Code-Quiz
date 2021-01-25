@@ -2,11 +2,11 @@
 // once I start the quiz the timer will start to countdown for 75 sec
 var timeEl = document.querySelector("#time-left");
 var startBtn = document.getElementById("button");
-var secondsLeft = 76;
+var secondsLeft = 60;
 var quizTile = document.querySelector("#title");
 var questionCounter = 0;
 var results = document.querySelector("#result");
-
+var highScore = document.getElementById("high-score");
 
 //question and choices variable
 var questions = [{
@@ -40,6 +40,8 @@ var questions = [{
 },
 
 ]
+
+
 
 // When I click a choice then it will go to the next question
 function nextQuestion() {
@@ -85,10 +87,25 @@ function correctChoice() {
         secondsLeft -= 15;
         console.log("false");
 
+        if (questionCounter > 5) {
+
+        }
+
     }
+
+    // if the user answers all of the questions then quiz ends
     questionCounter++;
-    nextQuestion();
+    if (questionCounter < questions.length) {
+        nextQuestion();
     }
+    else {
+        document.getElementById("high-score").textContent = "View your score " + secondsLeft;
+        document.getElementById("all-done").style.display = "block";
+    }
+}
+
+
+
 
 
 // the start button will start the time and go to question 1
@@ -121,16 +138,19 @@ document.getElementById("all-done").style.display = "none";
 function startTime() {
     console.log("startTime");
     var timerInterval = setInterval(function () {
-        secondsLeft--;
         timeEl.textContent = secondsLeft;
+        secondsLeft--;
+
 
         if (secondsLeft === 0 || questionCounter === 5) {
             clearInterval(timerInterval);
             // when time reaches 0 or all 5 questions are answered then the quiz questions are hidden and all done page is shown
             document.getElementById("quiz-question").style.display = "none";
-            document.getElementById("all-done").style.display = "block"; 
-             // this is where timer needs to reach 0
-            }
+            document.getElementById("all-done").style.display = "block";
+            // this is where timer needs to reach 0
+        }
+
+
     }, 1000);
 }
 
