@@ -11,4 +11,4 @@ If the timer reaches 0 or the user answers all of the questions then their score
 
 The user can then submit their initials to record their high score on the leader board. 
 
-![Window screenshot](/Assets/Quiz_screenshot.png?raw=true "Code -Quiz")
+![Window screenshot](/Quiz_screenshot.png?raw=true "Code Quiz")

@@ -113,16 +113,16 @@ startBtn.addEventListener("click", () => {
 function hideStartQuiz() {
 
     var hideStart = document.getElementById("start-quiz");
-    
 
-    if (hideStart.style.display === "none" ) {
+
+    if (hideStart.style.display === "none") {
         hideStart.style.display = "block";
-        
+
     }
     else {
         hideStart.style.display = "none";
-        
-        
+
+
     }
 }
 
@@ -146,10 +146,50 @@ function startTime() {
     }, 1000);
 }
 
-// high score html 
-function leaderBoard() {
+// // high score html 
+// $(document).ready(() => {
 
-    var score = secondsLeft
-}
+//     // save to localStorage
+//     // score and initials
+//     // save a lot --
+//     // two arrays -- will work but not recommended 
+//     //object...
+//     //object = {score: 10000000, initials:you}
+//     // an array to hold them 
+//     // string ... operations
+
+//     let highScores = [];
+//     let score;
+
+
+//     // get high score and initials
+//     score = 50;
+//     initials = "KTB"
+
+//     highScores.push({ score: score, intitials: initials })
+//     console.log(highScores)
+
+//     score = 25;
+//     initials = "DAK";
+
+//     localStorage.setItem('hi scores', Json.stringify(highScores))
+
+//     //clear the array and load it from localStorage
+//     highScores = []
+//     highScores = Json.parse(localStorage.getItem("hi scores"));
+
+//     // forEach
+
+//     highScores.forEach((element) => {
+
+//         // prints to the window
+//         let newEl = document.createElement("ul");
+//         newEl.textContent = `Initials: ${element.initials, Score: ${element.score}`;
+//         document.getElementById("hi-score").appendChild(newEl)
+
+//     })
+
+
+// })
 
 
